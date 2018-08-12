@@ -1,0 +1,21 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" 
+        href="{% static 'css/style.css' %}" />
+</head>
+<body>
+    <h1>{{title}}</h1>
+    
+    <p>This is sample page.</p>
+    <p>ここにリックをはって、開発しやすくしよう</p>
+    <ul>
+    <li><a href="{% url 'index' %}">index</a></li>
+    <li><a href="{% url 'member_register' %}">Member Refister</a></li>
+    <li><a href="{% url 'place_register' %}">Place Register</a></li>
+    </ul>
+</body>
+</html>
