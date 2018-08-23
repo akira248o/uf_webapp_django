@@ -10,40 +10,74 @@
 　　　　　　　　（２）Place
 　　　　　　　　（３）Matching
 
+# DB
+    Master
+        Job
+        Junle
+        Area
+        Membar
+
+    Transaction
+
+python manage.py createsuperuser
+   #username:admin
+   #Email-address:akira248o@gmail.com
+   #password:hinata1113
+
+# Migration
+
+python manage.py makemigrations matching_place
+python namage.py migrate
+
+
+
+
+python manage.py showmigrations
+python manage.py migrate --fake matching_place zero
+#データベースデータの一括削除
+python manage.py help flush
+python manage.py flush --database=default
+
+python manage.py migrate --fake
+python manage.py migrate
+
+
+db.sqlite3を消す
+
+
+# VIEW
 画面
 
 --- Member
-	* mail-address
-	first-name
-	middle-name
-	last-name
-	*nick-name
+	* mail_address
+	first_name
+	middle_name
+	last_name
+	*nick_name
 	*password
 	tel
 	birthday
 	gender
-	zip-code
+	zip_code
 	address1
 	address2
 	address3
 	-
-	place
-	type
+	area
 	junle
-	time-range
+	time_range
 
 --- Place
-	*id
+	*mail_address
 	*password
 	*name
 	tel
-	zip-code
+	zip_code
 	address1
 	address2
 	address3
-	president-name
-	mail-address
+	president_name
 
 --- Matching
-	*id
-	*mail-address
+	*member_id
+	*place_id
