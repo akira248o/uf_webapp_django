@@ -9,12 +9,52 @@
 </head>
 <body>
     <h1>{{title}}</h1>
-    
-    <p>This is member_register_init.html.</p>
-    <p>ここにリックをはって、開発しやすくしよう</p>
+    <table>
+        <form action="{% url 'mri' %}" method="post">
+        {% csrf_token %}
+        <tr>
+            <th>ログインＩＤ</th>
+            <td>{{form.loginid}}</td>
+        </tr>
+        <tr>
+            <th>ダンサーネーム</th>
+            <td>{{form.nick_name}}</td>
+        </tr>
+        <tr>
+            <th>メールアドレス</th>
+            <td>{{form.mail_address}}</td>
+        </tr>
+        <tr>
+            <th>パスワード</th>
+            <td>{{form.password}}</td>
+        </tr>
+        <tr>
+            <th>性別</th>
+            <td>
+                {% for radio in form.gender %}
+                <span class="gender">{{ radio }}</span>
+                {% endfor %}
+            </td>
+        </tr>
+        <tr>
+            <th>希望勤務地</th>
+            <td>{{form.area}}</td>
+        </tr>
+        <tr>
+            <th>ジャンル</th>
+            <td>{{form.junle}}</td>
+        </tr>
+            <tr><th>希望する曜日時間帯</th>
+            <td>{{form.time_range}}</td>
+        </tr>
+        <tr>
+            <th></th>
+            <td><input type="submit" value="登録"></td>
+        </tr>
+        </form>
+    </table>
     <ul>
-    <li><a href="{% url 'index' %}">TOP</a></li>
-    
+        <li><a href="{% url 'index' %}">TOP</a></li>
     </ul>
 </body>
 </html>

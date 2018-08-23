@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 #from django.http import HttpResponse
+from .models import Member
+from .forms import MemberForm
 
 ## -----------------------------------------
 # 最初のページ
@@ -10,11 +12,28 @@ def index(request):
     }
     return render(request,'index.html',params)
 
+
+## -----------------------------------------
+# メンバー登録初期ページ
+## -----------------------------------------
 def member_register_init(request):
+    if(request.method == 'POST'):
+        obj = Member()
+        member = MemberForm(request.POST, instance=obj)
+        member.save()
+        return redirect(to='/')
+    
     params = {
         'title': 'Register Member',
+        'form': MemberForm(),
     }
     return render(request,'member_register_init.html',params)
+
+
+
+
+
+
 
 def place_register(request):
     params = {

@@ -28,7 +28,7 @@
 # Migration
 
     python manage.py makemigrations matching_place
-    python namage.py migrate
+    python manage.py migrate
 
 
 # fake
@@ -46,6 +46,8 @@
 
     db.sqlite3を消す
 
+# サーバ開始
+    python manage.py runserver
 
 # VIEW
 画面

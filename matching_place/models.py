@@ -51,6 +51,7 @@ class Area(models.Model):
         ordering = ('name',)
 
 # Member
+#GENDER_CHOICES = (('1', '女'),('2', '男'),)
 class Member(models.Model):
     loginid = models.CharField(max_length=200)
     mail_address = models.EmailField(max_length=200, null=True,blank=True)
@@ -61,7 +62,8 @@ class Member(models.Model):
     password = models.CharField(max_length=16, null=True,blank=True)
     tel = models.CharField(max_length=12, null=True,blank=True)
     birthday = models.DateField(null=True,blank=True)
-    gender = models.CharField(max_length=1, null=True,blank=True)
+    gender = models.CharField(max_length=1,default="1",null=True,blank=True)
+    #gender = models.CharField(max_length=1,default="1",choices=GENDER_CHOICES)
     zip_code = models.CharField(max_length=8, null=True,blank=True)
     address1 = models.CharField(max_length=200, null=True,blank=True)
     address2 = models.CharField(max_length=200, null=True,blank=True)
