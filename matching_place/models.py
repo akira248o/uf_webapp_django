@@ -11,7 +11,8 @@ class Job(models.Model):
     upduser = models.CharField(max_length=100, null=True,blank=True)
     # __str__
     def __str__(self):
-        return "Job:id=" + str(self.id) + "," + str(self.name)
+        #return "Job:id=" + str(self.id) + "," + str(self.name)
+        return str(self.name)
 
     class Meta:
         ordering = ('name',)
@@ -27,7 +28,8 @@ class Junle(models.Model):
     upduser = models.CharField(max_length=100, null=True,blank=True)
     # __str__
     def __str__(self):
-        return "Junle:id=" + str(self.id) + ",[" + str(self.job) + "]," + str(self.name)
+        #return "Junle:id=" + str(self.id) + ",[" + str(self.job) + "]," + str(self.name)
+        return str(self.name)
     class Meta:
         ordering = ('name',)
 
@@ -43,7 +45,8 @@ class Area(models.Model):
     upduser = models.CharField(max_length=100, null=True,blank=True)
     # __str__
     def __str__(self):
-        return "Area:id=" + str(self.id) + "," + str(self.name)
+        ##return "Area:id=" + str(self.id) + "," + str(self.name)
+        return str(self.name)
     class Meta:
         ordering = ('name',)
 
@@ -81,25 +84,25 @@ class Member(models.Model):
     upduser = models.CharField(max_length=100, null=True,blank=True)
     # __str__
     def __str__(self):
-        return "Member:id=" + str(self.mail_address)
-#        return "Member:id=" + str(self.id)  \
-#            + "," + str(self.loginid)  \
-#            + "," + str(self.mail_address)  \
-#            + "," + str(self.last_name)  \
-#            + "," + str(self.first_name) \
-#            + "," + str(self.last_name) \
-#            + "," + str(self.nick_name) \
-#            + "," + str(self.tel) \
-#            + "," + str(self.birthday) \
-#            + "," + str(self.gender) \
-#            + "," + str(self.zip_code) \
-#            + "," + str(self.address1) \
-#            + "," + str(self.address2) \
-#            + "," + str(self.address3) \
-#            + ",[" + str(self.area) \
-#            + "],[" + str(self.job) \
-#            + "],[" + str(self.junle) \
-#            + "]"
+        #return "Member:id=" + str(self.mail_address)
+        return "Member:id=" + str(self.id)  \
+            + "," + str(self.loginid)  \
+            + "," + str(self.mail_address)  \
+            + "," + str(self.last_name)  \
+            + "," + str(self.first_name) \
+            + "," + str(self.last_name) \
+            + "," + str(self.nick_name) \
+            + "," + str(self.tel) \
+            + "," + str(self.birthday) \
+            + "," + str(self.gender) \
+            + "," + str(self.zip_code) \
+            + "," + str(self.address1) \
+            + "," + str(self.address2) \
+            + "," + str(self.address3) \
+            + ",[" + str(self.area) \
+            + "],[" + str(self.job) \
+            + "],[" + str(self.junle) \
+            + "]"
             
     class Meta:
         ordering = ('insdate',)
