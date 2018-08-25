@@ -70,14 +70,42 @@ class Member(models.Model):
     address3 = models.CharField(max_length=200, null=True,blank=True)
     # Matching Data
     area = models.ForeignKey(Area, on_delete=models.CASCADE, null=True,blank=True)
+    area1 = models.CharField(max_length=5, null=True,blank=True)
+    area2 = models.CharField(max_length=5, null=True,blank=True)
+    area3 = models.CharField(max_length=5, null=True,blank=True)
+    area4 = models.CharField(max_length=5, null=True,blank=True)
+    area5 = models.CharField(max_length=5, null=True,blank=True)
     # dancer,yoga-master,fitness instructor
     job =  models.ForeignKey(Job, on_delete=models.CASCADE, null=True,blank=True)
     # dancer - pop,jazz,lock,break
     junle = models.ForeignKey(Junle, on_delete=models.CASCADE, null=True,blank=True)
+    junle1 = models.CharField(max_length=5, null=True,blank=True)
+    junle2 = models.CharField(max_length=5, null=True,blank=True)
+    junle3 = models.CharField(max_length=5, null=True,blank=True)
+    junle4 = models.CharField(max_length=5, null=True,blank=True)
+    junle5 = models.CharField(max_length=5, null=True,blank=True)
     #
     # weekdate(0-6),hh:mm:dd => 7
     # ex) monday,20:30:00 - 21:30:00 = 1203000213000
-    time_range = models.CharField(max_length=14, null=True,blank=True)
+    #time_range = models.CharField(max_length=14, null=True,blank=True)
+    
+    weekday1 = models.CharField(max_length=1,default="-",null=True,blank=True)
+    weekday2 = models.CharField(max_length=1,default="-",null=True,blank=True)
+    weekday3 = models.CharField(max_length=1,default="-",null=True,blank=True)
+    weekday4 = models.CharField(max_length=1,default="-",null=True,blank=True)
+    weekday5 = models.CharField(max_length=1,default="-",null=True,blank=True)
+    
+    time_from1 = models.CharField(default="--:--",max_length=5,null=True,blank=True)
+    time_from2 = models.CharField(default="--:--",max_length=5,null=True,blank=True)
+    time_from3 = models.CharField(default="--:--",max_length=5,null=True,blank=True)
+    time_from4 = models.CharField(default="--:--",max_length=5,null=True,blank=True)
+    time_from5 = models.CharField(default="--:--",max_length=5,null=True,blank=True)
+    time_to1 = models.CharField(default="--:--",max_length=5,null=True,blank=True)
+    time_to2 = models.CharField(default="--:--",max_length=5,null=True,blank=True)
+    time_to3 = models.CharField(default="--:--",max_length=5,null=True,blank=True)
+    time_to4 = models.CharField(default="--:--",max_length=5,null=True,blank=True)
+    time_to5 = models.CharField(default="--:--",max_length=5,null=True,blank=True)
+    
     # Prefix
     vno = models.IntegerField(default=1)
     insdate = models.DateTimeField(auto_now_add=True,blank=True)

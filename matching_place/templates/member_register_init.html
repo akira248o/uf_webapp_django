@@ -37,15 +37,82 @@
             </td>
         </tr>
         <tr>
-            <th>希望勤務地</th>
-            <td>{{form.area}}</td>
+            <th>希望勤務地（１）</th>
+            <td>
+                <select name="area1">
+                <option class="area" value="0">-------</option>
+                {% for area in area_value %}
+                    <option class="area" value="{{ area.id }}">{{ area.name }}</option>
+                {% endfor %}
+                </select>
+            </td>
         </tr>
         <tr>
-            <th>ジャンル</th>
-            <td>{{form.junle}}</td>
+            <th>希望勤務地（２）</th>
+            <td>
+                <select name="area2">
+                <option class="area" value="0">-------</option>
+                {% for area in area_value %}
+                    <option class="area" value="{{ area.id }}">{{ area.name }}</option>
+                {% endfor %}
+                </select>
+            </td>
         </tr>
-            <tr><th>希望する曜日時間帯</th>
-            <td>{{form.time_range}}</td>
+        <tr>
+            <th>希望勤務地（３）</th>
+            <td>
+                <select name="area3">
+                <option class="area" value="0">-------</option>
+                {% for area in area_value %}
+                    <option class="area" value="{{ area.id }}">{{ area.name }}</option>
+                {% endfor %}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>ジャンル（１）</th>
+            <td>
+                <select name="junle1">
+                    <option class="junle" value="0">-------</option>
+                {% for junle in junle_value %}
+                    <option class="junle" value="{{ junle.id }}">{{ junle.name }}</option>
+                {% endfor %}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>ジャンル（２）</th>
+            <td>
+                <select name="junle2">
+                <option class="junle" value="0">-------</option>
+                {% for junle in junle_value %}
+                    <option class="junle" value="{{ junle.id }}">{{ junle.name }}</option>
+                {% endfor %}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>ジャンル（３）</th>
+            <td>
+                <select name="junle3">
+                <option class="junle" value="0">-------</option>
+                {% for junle in junle_value %}
+                    <option class="junle" value="{{ junle.id }}">{{ junle.name }}</option>
+                {% endfor %}
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>希望する曜日時間帯（１）</th>
+            <td>{{form.weekday1}} {{form.time_from1}} {{form.time_to1}}</td>
+        </tr>
+        <tr>
+            <th>希望する曜日時間帯（２）</th>
+            <td>{{form.weekday2}} {{form.time_from2}} {{form.time_to2}}</td>
+        </tr>
+        <tr>
+            <th>希望する曜日時間帯（３）</th>
+            <td>{{form.weekday3}} {{form.time_from3}} {{form.time_to3}}</td>
         </tr>
         <tr>
             <th></th>
